@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sshpass -p $(cat ./4.pass) ssh -q -o StrictHostKeyChecking=no -p 2220 bandit5@bandit.labs.overthewire.org 'find ./inhere/ -type f -not -executable -size 1033c | xargs cat | grep -o "[0-9A-Za-z]*"'
