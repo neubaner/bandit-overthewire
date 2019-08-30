@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PASS=$(cat 19.pass)
+sshpass -p $PASS ssh -q -o StrictHostKeyChecking=no -p 2220 bandit20@bandit.labs.overthewire.org "/bin/bash -c \"(echo $PASS  | nc -l -p 42069 &) && ./suconnect 42069 >/dev/null\""
