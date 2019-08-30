@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Explanation!
+# On a shell login, ~/.profile will run. If you use bash, .profile runs .bashrc, whoever
+# we are running sh and we are not logged out
+
+sshpass -p $(cat 17.pass) ssh -q -o StrictHostKeyChecking=no -p 2220 bandit18@bandit.labs.overthewire.org "/bin/sh -c \"cat readme\""

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# ssh requires more strict permissions on private ssh keys
+chmod 600 16.pass
+ssh -q -o StrictHostKeyChecking=no -p 2220 -i "16.pass" bandit17@bandit.labs.overthewire.org "diff passwords.old passwords.new | tail -n 1 | grep -o \"[0-9A-Za-z]\+$\""

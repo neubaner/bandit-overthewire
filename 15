@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PASS=$(cat ./14.pass)
+sshpass -p "$PASS" ssh -q -o StrictHostKeyChecking=no -p 2220 bandit15@bandit.labs.overthewire.org "echo \"$PASS\" | openssl s_client -connect localhost:30001 -quiet 2>/dev/null | head -n 2 | tail -n 1" 
