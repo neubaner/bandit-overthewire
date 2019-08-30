@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# ssh requires more strict permissions on private ssh keys
+chmod 600 13.pass
+ssh -q -o StrictHostKeyChecking=no -p 2220 -i "13.pass" bandit14@bandit.labs.overthewire.org "cat /etc/bandit_pass/bandit14 | nc localhost 30000 | head -n 2 | tail -n 1"
