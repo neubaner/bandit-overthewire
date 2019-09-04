@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# ssh requires more strict permissions on private ssh keys
+#chmod 600 25.pass
+#ssh -q -o StrictHostKeyChecking=no -p 2220 -i "25.pass" bandit26@bandit.labs.overthewire.org 
+
+
+# I honestly could not find the answer myself
+# I looked up to the answer at this post https://medium.com/@coturnix97/overthewires-bandit-25-26-shell-355d78fd2f4d
+echo 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
